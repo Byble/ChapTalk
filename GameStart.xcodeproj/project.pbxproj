@@ -8,13 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		8C39F65E20E0815F0009FDE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39F65D20E0815F0009FDE9 /* AppDelegate.swift */; };
-		8C39F66020E0815F0009FDE9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39F65F20E0815F0009FDE9 /* ViewController.swift */; };
+		8C39F66020E0815F0009FDE9 /* RoomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39F65F20E0815F0009FDE9 /* RoomListViewController.swift */; };
 		8C39F66320E0815F0009FDE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C39F66120E0815F0009FDE9 /* Main.storyboard */; };
 		8C39F66620E0815F0009FDE9 /* GameStart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8C39F66420E0815F0009FDE9 /* GameStart.xcdatamodeld */; };
 		8C39F66820E081600009FDE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C39F66720E081600009FDE9 /* Assets.xcassets */; };
 		8C39F66B20E081600009FDE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C39F66920E081600009FDE9 /* LaunchScreen.storyboard */; };
 		8C39F67620E081600009FDE9 /* GameStartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39F67520E081600009FDE9 /* GameStartTests.swift */; };
 		8C39F68120E081600009FDE9 /* GameStartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39F68020E081600009FDE9 /* GameStartUITests.swift */; };
+		8C39F69120E0900D0009FDE9 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39F69020E0900D0009FDE9 /* Client.swift */; };
+		8C39F69720E0B5830009FDE9 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39F69620E0B5830009FDE9 /* Message.swift */; };
+		8C39F69920E0BA320009FDE9 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39F69820E0BA320009FDE9 /* MessageCell.swift */; };
+		8C39F69D20E0C9740009FDE9 /* refresh@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C39F69C20E0C9740009FDE9 /* refresh@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +41,7 @@
 /* Begin PBXFileReference section */
 		8C39F65A20E0815F0009FDE9 /* GameStart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameStart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C39F65D20E0815F0009FDE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8C39F65F20E0815F0009FDE9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8C39F65F20E0815F0009FDE9 /* RoomListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListViewController.swift; sourceTree = "<group>"; };
 		8C39F66220E0815F0009FDE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C39F66520E0815F0009FDE9 /* GameStart.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GameStart.xcdatamodel; sourceTree = "<group>"; };
 		8C39F66720E081600009FDE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +53,10 @@
 		8C39F67C20E081600009FDE9 /* GameStartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameStartUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C39F68020E081600009FDE9 /* GameStartUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStartUITests.swift; sourceTree = "<group>"; };
 		8C39F68220E081600009FDE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C39F69020E0900D0009FDE9 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		8C39F69620E0B5830009FDE9 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		8C39F69820E0BA320009FDE9 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		8C39F69C20E0C9740009FDE9 /* refresh@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +107,15 @@
 		8C39F65C20E0815F0009FDE9 /* GameStart */ = {
 			isa = PBXGroup;
 			children = (
+				8C39F69B20E0BDA40009FDE9 /* Message */,
+				8C39F69A20E0BD920009FDE9 /* Storyboard */,
 				8C39F65D20E0815F0009FDE9 /* AppDelegate.swift */,
-				8C39F65F20E0815F0009FDE9 /* ViewController.swift */,
-				8C39F66120E0815F0009FDE9 /* Main.storyboard */,
-				8C39F66720E081600009FDE9 /* Assets.xcassets */,
-				8C39F66920E081600009FDE9 /* LaunchScreen.storyboard */,
+				8C39F65F20E0815F0009FDE9 /* RoomListViewController.swift */,
+				8C39F69020E0900D0009FDE9 /* Client.swift */,
 				8C39F66C20E081600009FDE9 /* Info.plist */,
 				8C39F66420E0815F0009FDE9 /* GameStart.xcdatamodeld */,
+				8C39F66720E081600009FDE9 /* Assets.xcassets */,
+				8C39F69C20E0C9740009FDE9 /* refresh@3x.png */,
 			);
 			path = GameStart;
 			sourceTree = "<group>";
@@ -126,6 +136,24 @@
 				8C39F68220E081600009FDE9 /* Info.plist */,
 			);
 			path = GameStartUITests;
+			sourceTree = "<group>";
+		};
+		8C39F69A20E0BD920009FDE9 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				8C39F66120E0815F0009FDE9 /* Main.storyboard */,
+				8C39F66920E081600009FDE9 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		8C39F69B20E0BDA40009FDE9 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				8C39F69620E0B5830009FDE9 /* Message.swift */,
+				8C39F69820E0BA320009FDE9 /* MessageCell.swift */,
+			);
+			path = Message;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +263,7 @@
 				8C39F66B20E081600009FDE9 /* LaunchScreen.storyboard in Resources */,
 				8C39F66820E081600009FDE9 /* Assets.xcassets in Resources */,
 				8C39F66320E0815F0009FDE9 /* Main.storyboard in Resources */,
+				8C39F69D20E0C9740009FDE9 /* refresh@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,9 +288,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C39F66020E0815F0009FDE9 /* ViewController.swift in Sources */,
+				8C39F66020E0815F0009FDE9 /* RoomListViewController.swift in Sources */,
 				8C39F65E20E0815F0009FDE9 /* AppDelegate.swift in Sources */,
+				8C39F69120E0900D0009FDE9 /* Client.swift in Sources */,
+				8C39F69720E0B5830009FDE9 /* Message.swift in Sources */,
 				8C39F66620E0815F0009FDE9 /* GameStart.xcdatamodeld in Sources */,
+				8C39F69920E0BA320009FDE9 /* MessageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
