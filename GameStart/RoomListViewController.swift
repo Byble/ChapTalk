@@ -8,12 +8,17 @@
 
 import UIKit
 
+protocol SendDataDelegate{
+    func sendData(Sclient: Client)
+}
+
 class RoomListViewController: UIViewController {
-    
     
     @IBOutlet var progressView: UIProgressView!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var tableTopConstraint: NSLayoutConstraint!
+    
+    var delegate: SendDataDelegate!
     
     let client = Client()
     var Rooms: [String] = ["Hello World"]
@@ -102,7 +107,9 @@ extension RoomListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "message")
+        let id = "message"
+        let cell = tableView.dequeueReusableCell(withIdentifier: id) ?? UITableViewCell(style: .default, reuseIdentifier: id)
+        
         cell.selectionStyle = .none
         
         cell.textLabel?.text = Rooms[indexPath.row]
@@ -113,6 +120,7 @@ extension RoomListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         client.JoinRoom(roomName: Rooms[indexPath.row])
         // 화면 이동
+        performSegue(withIdentifier: "JoinRoom", sender: nil)
     }
 }
 

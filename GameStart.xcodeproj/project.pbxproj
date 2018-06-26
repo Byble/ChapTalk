@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C2EC2FA20E1C1A2009AC07E /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2EC2F920E1C1A2009AC07E /* LogInViewController.swift */; };
 		8C39F65E20E0815F0009FDE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39F65D20E0815F0009FDE9 /* AppDelegate.swift */; };
 		8C39F66020E0815F0009FDE9 /* RoomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39F65F20E0815F0009FDE9 /* RoomListViewController.swift */; };
 		8C39F66320E0815F0009FDE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C39F66120E0815F0009FDE9 /* Main.storyboard */; };
@@ -19,6 +20,9 @@
 		8C39F69720E0B5830009FDE9 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39F69620E0B5830009FDE9 /* Message.swift */; };
 		8C39F69920E0BA320009FDE9 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39F69820E0BA320009FDE9 /* MessageCell.swift */; };
 		8C39F69D20E0C9740009FDE9 /* refresh@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C39F69C20E0C9740009FDE9 /* refresh@3x.png */; };
+		8C39F69F20E151F50009FDE9 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39F69E20E151F50009FDE9 /* ChatViewController.swift */; };
+		8C98FFE920E2210E0060F222 /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C98FFE720E2210E0060F222 /* lock.png */; };
+		8C98FFEA20E2210E0060F222 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C98FFE820E2210E0060F222 /* login.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C2EC2F920E1C1A2009AC07E /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "\U0010LogInViewController.swift"; sourceTree = "<group>"; };
 		8C39F65A20E0815F0009FDE9 /* GameStart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameStart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C39F65D20E0815F0009FDE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C39F65F20E0815F0009FDE9 /* RoomListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +62,9 @@
 		8C39F69620E0B5830009FDE9 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		8C39F69820E0BA320009FDE9 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		8C39F69C20E0C9740009FDE9 /* refresh@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@3x.png"; sourceTree = "<group>"; };
+		8C39F69E20E151F50009FDE9 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		8C98FFE720E2210E0060F222 /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
+		8C98FFE820E2210E0060F222 /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,9 +120,13 @@
 				8C39F65D20E0815F0009FDE9 /* AppDelegate.swift */,
 				8C39F65F20E0815F0009FDE9 /* RoomListViewController.swift */,
 				8C39F69020E0900D0009FDE9 /* Client.swift */,
+				8C39F69E20E151F50009FDE9 /* ChatViewController.swift */,
+				8C2EC2F920E1C1A2009AC07E /* LogInViewController.swift */,
 				8C39F66C20E081600009FDE9 /* Info.plist */,
 				8C39F66420E0815F0009FDE9 /* GameStart.xcdatamodeld */,
 				8C39F66720E081600009FDE9 /* Assets.xcassets */,
+				8C98FFE720E2210E0060F222 /* lock.png */,
+				8C98FFE820E2210E0060F222 /* login.png */,
 				8C39F69C20E0C9740009FDE9 /* refresh@3x.png */,
 			);
 			path = GameStart;
@@ -261,6 +273,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C39F66B20E081600009FDE9 /* LaunchScreen.storyboard in Resources */,
+				8C98FFEA20E2210E0060F222 /* login.png in Resources */,
+				8C98FFE920E2210E0060F222 /* lock.png in Resources */,
 				8C39F66820E081600009FDE9 /* Assets.xcassets in Resources */,
 				8C39F66320E0815F0009FDE9 /* Main.storyboard in Resources */,
 				8C39F69D20E0C9740009FDE9 /* refresh@3x.png in Resources */,
@@ -291,7 +305,9 @@
 				8C39F66020E0815F0009FDE9 /* RoomListViewController.swift in Sources */,
 				8C39F65E20E0815F0009FDE9 /* AppDelegate.swift in Sources */,
 				8C39F69120E0900D0009FDE9 /* Client.swift in Sources */,
+				8C39F69F20E151F50009FDE9 /* ChatViewController.swift in Sources */,
 				8C39F69720E0B5830009FDE9 /* Message.swift in Sources */,
+				8C2EC2FA20E1C1A2009AC07E /* LogInViewController.swift in Sources */,
 				8C39F66620E0815F0009FDE9 /* GameStart.xcdatamodeld in Sources */,
 				8C39F69920E0BA320009FDE9 /* MessageCell.swift in Sources */,
 			);
