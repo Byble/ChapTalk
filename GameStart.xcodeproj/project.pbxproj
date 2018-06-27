@@ -115,6 +115,7 @@
 		8C39F65C20E0815F0009FDE9 /* GameStart */ = {
 			isa = PBXGroup;
 			children = (
+				8C872AB320E29B2B0079398A /* Resource */,
 				8C39F69B20E0BDA40009FDE9 /* Message */,
 				8C39F69A20E0BD920009FDE9 /* Storyboard */,
 				8C39F65D20E0815F0009FDE9 /* AppDelegate.swift */,
@@ -125,9 +126,6 @@
 				8C39F66C20E081600009FDE9 /* Info.plist */,
 				8C39F66420E0815F0009FDE9 /* GameStart.xcdatamodeld */,
 				8C39F66720E081600009FDE9 /* Assets.xcassets */,
-				8C98FFE720E2210E0060F222 /* lock.png */,
-				8C98FFE820E2210E0060F222 /* login.png */,
-				8C39F69C20E0C9740009FDE9 /* refresh@3x.png */,
 			);
 			path = GameStart;
 			sourceTree = "<group>";
@@ -166,6 +164,16 @@
 				8C39F69820E0BA320009FDE9 /* MessageCell.swift */,
 			);
 			path = Message;
+			sourceTree = "<group>";
+		};
+		8C872AB320E29B2B0079398A /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				8C98FFE720E2210E0060F222 /* lock.png */,
+				8C98FFE820E2210E0060F222 /* login.png */,
+				8C39F69C20E0C9740009FDE9 /* refresh@3x.png */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

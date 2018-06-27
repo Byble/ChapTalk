@@ -10,7 +10,7 @@ import UIKit
 
 class ChatViewController: UIViewController {
 
-    var client: Client? = nil
+    var client: Client?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class ChatViewController: UIViewController {
     }
 }
 
-extension ChatViewController: SendDataDelegate{
+extension ChatViewController: SendDataToChatDelegate{
     func sendData(Sclient: Client) {
         client = Sclient
     }

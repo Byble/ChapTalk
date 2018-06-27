@@ -8,11 +8,19 @@
 
 import UIKit
 
+protocol SendDataToRoomDelegate{
+    func sendData(Sclient: Client)
+}
+
 class LogInViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var LoginTextView: UITextField!
     @IBOutlet var PasswdTextView: UITextField!
     @IBOutlet var ApplyBtnView: UIButton!
+    
+    var delegate: SendDataToRoomDelegate!
+    
+    let client = Client()
     
     let viewColor: UIColor = UIColor(red: 109/255, green: 201/255, blue: 149/255, alpha: 1)
     let LoginBtnColor: UIColor = UIColor(red: 89/255, green: 156/255, blue: 120/255, alpha: 1)
@@ -21,6 +29,10 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     var PasswdImage: UIImage?
     var LoginImageView: UIImageView!
     var PasswdImageView: UIImageView!
+    
+    var helloView = UIView()
+    var loadingView = UIView()
+    var loading: UIActivityIndicatorView?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -47,6 +59,8 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         LoginImageV.addSubview(LoginImageView)
         LoginTextView.leftView = LoginImageV
         LoginTextView.leftViewMode = .always
+        LoginTextView.spellCheckingType = .no
+        LoginTextView.autocorrectionType = .no
         //LoginTextView.paddingLeftCustom(width: 30)
         
         let PasswdPlaceholder = NSAttributedString(string: "비밀번호", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
@@ -59,6 +73,8 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         PassImageV.addSubview(PasswdImageView)
         PasswdTextView.leftView = PassImageV
         PasswdTextView.leftViewMode = .always
+        PasswdTextView.spellCheckingType = .no
+        PasswdTextView.autocorrectionType = .no
         //PasswdTextView.paddingLeftCustom(width: 30)
         
         ApplyBtnView.setTitle("로그인", for: .normal)
@@ -66,7 +82,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         ApplyBtnView.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         ApplyBtnView.backgroundColor = LoginBtnColor
         
-        //self.view.backgroundColor = UIColor.yellow
         self.view.backgroundColor = viewColor
     }
     
@@ -81,7 +96,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func keyboardWillShow(_ sender: Notification){
-        self.view.frame.origin.y = -150
+        self.view.frame.origin.y = -100
     }
 
     @objc func keyboardWillHide(_ sender: Notification){
@@ -96,6 +111,57 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
+    @IBAction func LoginBtn(_ sender: UIButton) {
+        if (LoginTextView.text != "" && PasswdTextView.text != "")
+        {
+            setupLoading()
+            self.view.endEditing(true)
+            
+//            client.delegate = self
+//            client.setupNetwork()
+        }
+        
+    }
+    @objc func HelloOkBtn(){
+        delegate?.sendData(Sclient: client)
+        self.performSegue(withIdentifier: "ToRoom", sender: self)
+    }
+    func setupLoading(){
+        
+        self.loadingView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
+        self.loadingView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        
+        loading = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        loading?.center = self.loadingView.center
+        loading?.hidesWhenStopped = false
+        loading?.startAnimating()
+        self.loadingView.addSubview(loading!)
+        self.view.addSubview(loadingView)
+    }
+}
+
+extension LogInViewController: ClientDelegate{
+    func receivedMessage(message: Message) {
+        if(message.senderUsername == "#4Hello"){
+            loading?.stopAnimating()
+            self.loadingView.removeFromSuperview()
+            
+            self.helloView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
+            self.helloView.backgroundColor = UIColor.red
+            
+            let okBtn = UIButton(frame: CGRect(x: 0, y: self.helloView.center.y * 1.5, width: 150, height: 30))
+            okBtn.center.x = helloView.frame.width / 2
+            okBtn.addTarget(self, action: #selector(HelloOkBtn), for: .touchUpInside)
+            okBtn.backgroundColor = UIColor.yellow
+            okBtn.setTitle("확인", for: .normal)
+            self.helloView.addSubview(okBtn)
+            
+            self.view.addSubview(self.helloView)
+        }
+    }
+    
+    
 }
 
 @IBDesignable extension UITextField{
@@ -143,6 +209,3 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     }
 }
 
-@IBDesignable extension UIView{
-    
-}

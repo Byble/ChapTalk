@@ -8,8 +8,10 @@
 // #0: > Message
 // #1: > makeRoom
 // #2: > joinRoom
-// #3:require > require updateRoomList
-// #3:response > get updatedRoomList
+// #3require > require updateRoomList
+// #3response > get updatedRoomList
+// #4Hello > say hello to client from server at first time
+
 import UIKit
 
 protocol ClientDelegate: class {
@@ -45,6 +47,11 @@ class Client: NSObject {
         outputStream.open()
     }
     
+    func sendMessage(message: String){
+        let data = "#0:\(username): \(message)".data(using: .ascii)! // #0:username: message 메시지 보내기 요청
+        _ = data.withUnsafeBytes{outputStream.write($0, maxLength: data.count)}
+    }
+    
     func MakeRoom(roomName: String) {
         let data = "#1:\(username):name:\(roomName)".data(using: .ascii)! // #1:username:name:roomName 방 만들기 요청
         _ = data.withUnsafeBytes{ outputStream.write($0, maxLength: data.count)}
@@ -55,8 +62,8 @@ class Client: NSObject {
         _ = data.withUnsafeBytes{ outputStream.write($0, maxLength: data.count)}
     }
     
-    func sendMessage(message: String){
-        let data = "\(username): \(message)".data(using: .ascii)! // username: message 메시지 보내기 요청
+    func updateRoomList(){
+        let data = "#3:require:\(username))".data(using: .ascii)! // #3:require: username 방 리스트 요청
         _ = data.withUnsafeBytes{outputStream.write($0, maxLength: data.count)}
     }
     

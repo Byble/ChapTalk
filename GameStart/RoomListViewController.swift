@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SendDataDelegate{
+protocol SendDataToChatDelegate{
     func sendData(Sclient: Client)
 }
 
@@ -18,9 +18,9 @@ class RoomListViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var tableTopConstraint: NSLayoutConstraint!
     
-    var delegate: SendDataDelegate!
+    var delegate: SendDataToChatDelegate!
     
-    let client = Client()
+    var client: Client?
     var Rooms: [String] = ["Hello World"]
     
     var minValue = 0
@@ -30,8 +30,8 @@ class RoomListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        client.delegate = self
-        client.setupNetwork()
+        client?.delegate = self
+        client?.setupNetwork()
     }
     
     override func viewDidLoad() {
@@ -47,11 +47,9 @@ class RoomListViewController: UIViewController {
     
     @IBAction func updateRoomList(_ sender: Any) {
         self.showProgressBar()
-        print("updateRoomList")
         tableView.beginUpdates()
         
-        client.sendMessage(message: "#3require:")
-        
+        client?.updateRoomList()
         timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(progressUpper(_:)), userInfo: nil, repeats: true)
         progressView.setProgress(0, animated: false)
 
@@ -87,13 +85,26 @@ class RoomListViewController: UIViewController {
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToRoom"{
+            let viewController: LogInViewController = segue.destination as! LogInViewController
+            viewController.delegate = self
+        }
+    }
 }
 
 extension RoomListViewController: ClientDelegate {
     func receivedMessage(message: Message) {
-        if(message.senderUsername == "#3response:"){
+        if(message.senderUsername == "#3response"){
             Rooms = message.message.components(separatedBy: ",")
         }
+    }
+}
+
+extension RoomListViewController: SendDataToRoomDelegate{
+    func sendData(Sclient: Client) {
+        client = Sclient
     }
 }
 
@@ -118,10 +129,12 @@ extension RoomListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        client.JoinRoom(roomName: Rooms[indexPath.row])
+        client?.JoinRoom(roomName: Rooms[indexPath.row])
         // 화면 이동
+        delegate?.sendData(Sclient: client!)
         performSegue(withIdentifier: "JoinRoom", sender: nil)
     }
 }
+
 
 
