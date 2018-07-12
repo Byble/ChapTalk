@@ -8,17 +8,12 @@
 
 import UIKit
 
-protocol SendDataToRoomDelegate{
-    func sendData(Sclient: Client)
-}
 
 class LogInViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var LoginTextView: UITextField!
     @IBOutlet var PasswdTextView: UITextField!
     @IBOutlet var ApplyBtnView: UIButton!
-    
-    var delegate: SendDataToRoomDelegate!
     
     let client = Client()
     
@@ -35,8 +30,8 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     var loading: UIActivityIndicatorView?
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
         
+
         self.LoginImage = UIImage(named: "login.png")
         self.PasswdImage = UIImage(named: "lock.png")
         
@@ -55,6 +50,8 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         LoginTextView.font = UIFont.systemFont(ofSize: 15)
         LoginTextView.contentVerticalAlignment = .center
         LoginTextView.setupBottomBorder(backgroundColor: viewColor, BborderColor: UIColor.white)
+        LoginTextView.keyboardType = .asciiCapable
+        
         let LoginImageV = UIView(frame: CGRect(x: 0, y: 0, width: LoginTextView.frame.size.height + 5, height: LoginTextView.frame.size.height - 5))
         LoginImageV.addSubview(LoginImageView)
         LoginTextView.leftView = LoginImageV
@@ -69,6 +66,8 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         PasswdTextView.font = UIFont.systemFont(ofSize: 15)
         PasswdTextView.contentVerticalAlignment = .center
         PasswdTextView.setupBottomBorder(backgroundColor: viewColor, BborderColor: UIColor.white)
+        PasswdTextView.keyboardType = .asciiCapable
+        
         let PassImageV = UIView(frame: CGRect(x: 0, y: 0, width: PasswdTextView.frame.size.height + 5, height: PasswdTextView.frame.size.height - 5))
         PassImageV.addSubview(PasswdImageView)
         PasswdTextView.leftView = PassImageV
@@ -93,6 +92,8 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+
+        client.delegate = self
     }
     
     @objc func keyboardWillShow(_ sender: Notification){
@@ -118,13 +119,10 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
             setupLoading()
             self.view.endEditing(true)
             
-//            client.delegate = self
-//            client.setupNetwork()
+            client.setupNetwork()
         }
-        
     }
     @objc func HelloOkBtn(){
-        delegate?.sendData(Sclient: client)
         self.performSegue(withIdentifier: "ToRoom", sender: self)
     }
     func setupLoading(){
@@ -139,25 +137,51 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         self.loadingView.addSubview(loading!)
         self.view.addSubview(loadingView)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "ToRoom"){
+            let tabVC = segue.destination as? UITabBarController
+            
+            let navVC1 = tabVC?.viewControllers![0] as? UINavigationController
+            let navVC2 = tabVC?.viewControllers![1] as? UINavigationController
+            
+            let Friend = navVC1?.topViewController as! FriendListTableViewController
+            let Room = navVC2?.topViewController as! RoomListViewController
+            
+            Friend.client = client
+            Room.client = client
+        }
+    }
 }
 
 extension LogInViewController: ClientDelegate{
     func receivedMessage(message: Message) {
-        if(message.senderUsername == "#4Hello"){
+        if(message.senderUsername == "#4"){
+            
             loading?.stopAnimating()
             self.loadingView.removeFromSuperview()
             
-            self.helloView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
-            self.helloView.backgroundColor = UIColor.red
+//            self.helloView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
+//            self.helloView.backgroundColor = UIColor.red
+//
+//            let okBtn = UIButton(frame: CGRect(x: 0, y: self.helloView.center.y * 1.5, width: 150, height: 30))
+//            okBtn.center.x = helloView.frame.width / 2
+//            okBtn.addTarget(self, action: #selector(HelloOkBtn), for: .touchUpInside)
+//            okBtn.backgroundColor = UIColor.yellow
+//            okBtn.setTitle("확인", for: .normal)
+//            self.helloView.addSubview(okBtn)
+//
+//            self.view.addSubview(self.helloView)
             
-            let okBtn = UIButton(frame: CGRect(x: 0, y: self.helloView.center.y * 1.5, width: 150, height: 30))
-            okBtn.center.x = helloView.frame.width / 2
-            okBtn.addTarget(self, action: #selector(HelloOkBtn), for: .touchUpInside)
-            okBtn.backgroundColor = UIColor.yellow
-            okBtn.setTitle("확인", for: .normal)
-            self.helloView.addSubview(okBtn)
+            let alert = UIAlertController(title: nil, message: "로그인 하였습니다.", preferredStyle: .alert)
             
-            self.view.addSubview(self.helloView)
+            let okbtn = UIAlertAction(title: "ok", style: .default) { (action) -> Void in
+                self.HelloOkBtn()
+            }
+            alert.addAction(okbtn)
+            
+            self.present(alert, animated: false)
+            client.username = LoginTextView.text!
         }
     }
     

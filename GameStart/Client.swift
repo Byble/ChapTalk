@@ -6,12 +6,8 @@
 //  Copyright © 2018년 MGHouse. All rights reserved.
 //
 // #0: > Message
-// #1: > makeRoom
-// #2: > joinRoom
-// #3require > require updateRoomList
-// #3response > get updatedRoomList
 // #4Hello > say hello to client from server at first time
-
+// #5request friend
 import UIKit
 
 protocol ClientDelegate: class {
@@ -25,11 +21,13 @@ class Client: NSObject {
     var inputStream: InputStream!
     var outputStream: OutputStream!
     
-    let host: CFString = "127.0.0.1" as CFString
+    //let host: CFString = "127.0.0.1" as CFString
+    
+    let host: CFString = "169.254.80.148" as CFString
     let port: UInt32 = 34730
     let maxReadLength = 1024
     
-    var username = ""
+    var username = "default"
     
     func setupNetwork() {
         var readStream: Unmanaged<CFReadStream>?
@@ -43,27 +41,37 @@ class Client: NSObject {
         inputStream.delegate = self
         outputStream.delegate = self
         
+        inputStream.schedule(in: .main, forMode: .commonModes)
+        outputStream.schedule(in: .main, forMode: .commonModes)
+        
         inputStream.open()
         outputStream.open()
+        
     }
     
     func sendMessage(message: String){
-        let data = "#0:\(username): \(message)".data(using: .ascii)! // #0:username: message 메시지 보내기 요청
+        let data = "#0:\(username):\(message)".data(using: .utf8)!
         _ = data.withUnsafeBytes{outputStream.write($0, maxLength: data.count)}
     }
     
-    func MakeRoom(roomName: String) {
-        let data = "#1:\(username):name:\(roomName)".data(using: .ascii)! // #1:username:name:roomName 방 만들기 요청
-        _ = data.withUnsafeBytes{ outputStream.write($0, maxLength: data.count)}
+    func requestFriend(name: String){
+        let data = "#5:\(name)".data(using: .utf8)!
+        _ = data.withUnsafeBytes{outputStream.write($0, maxLength: data.count)}
     }
-    
-    func JoinRoom(roomName: String) {
-        let data = "#2:\(username):To:\(roomName)".data(using: .ascii)! // #2:username:To:roomName 방 들어가기 요청
-        _ = data.withUnsafeBytes{ outputStream.write($0, maxLength: data.count)}
+    func gameStartMsg(myName: String, enemyName: String){
+        let data = "#6:\(myName):\(enemyName)".data(using: .utf8)!
+        _ = data.withUnsafeBytes{outputStream.write($0, maxLength: data.count)}
     }
-    
-    func updateRoomList(){
-        let data = "#3:require:\(username))".data(using: .ascii)! // #3:require: username 방 리스트 요청
+    func goGameMsg(){
+        let data = "#7:start".data(using: .utf8)!
+        _ = data.withUnsafeBytes{outputStream.write($0, maxLength: data.count)}
+    }
+    func sendID(){
+        let data = "\(username)".data(using: .utf8)! // #: ID 전송
+        _ = data.withUnsafeBytes{outputStream.write($0, maxLength: data.count)}
+    }
+    func myChar(text: String){
+        let data = "#8:\(username):\(text)".data(using: .utf8)!
         _ = data.withUnsafeBytes{outputStream.write($0, maxLength: data.count)}
     }
     
@@ -71,6 +79,7 @@ class Client: NSObject {
         inputStream.close()
         outputStream.close()
     }
+    
     
     private func readAvailableBytes(stream: InputStream) {
         let buffer = UnsafeMutablePointer<UInt8>.allocate(capacity: maxReadLength)
@@ -94,33 +103,48 @@ class Client: NSObject {
                                         length: Int) -> Message? {
         guard let stringArray = String(bytesNoCopy: buffer,
                                        length: length,
-                                       encoding: .ascii,
+                                       encoding: .utf8,
                                        freeWhenDone: true)?.components(separatedBy: ":"),
             let name = stringArray.first,
             let message = stringArray.last else {
                 return nil
         }
-        
-        let messageSender:MessageSender = (name == self.username) ? .ourself : .someoneElse
-        
-        return Message(message: message, messageSender: messageSender, username: name)
+
+        return Message(message: message, username: name)
     }
 }
 extension Client: StreamDelegate {
     func stream(_ aStream: Stream, handle eventCode: Stream.Event) {
-        switch eventCode {
-        case Stream.Event.hasBytesAvailable:
-            print("새 메시지 도착")
-            readAvailableBytes(stream: aStream as! InputStream)
-        case Stream.Event.endEncountered:
-            stopChatSession()
-        case Stream.Event.errorOccurred:
-            print("오류 발생")
-        case Stream.Event.hasSpaceAvailable:
-            print("공간 부족")
-        default:
-            print("Something Event...")
-            break
+        if aStream == inputStream{
+            switch eventCode{
+            case Stream.Event.errorOccurred:
+                print("오류 발생")
+            case Stream.Event.openCompleted:
+                print("openCompleted")
+            case Stream.Event.hasBytesAvailable:
+                print("HasBytesAvaliable")
+                readAvailableBytes(stream: aStream as! InputStream)
+            case Stream.Event.endEncountered:
+                stopChatSession()
+            default:
+                print("inputStream default")
+                break
+            }
+        }
+        if aStream == outputStream{
+            switch eventCode{
+            case Stream.Event.errorOccurred:
+                print("오류 발생")
+            case Stream.Event.openCompleted:
+                print("openCompleted")
+            case Stream.Event.hasSpaceAvailable:
+                print("HasSpaceAvailable")
+            case Stream.Event.endEncountered:
+                stopChatSession()
+            default:
+                print("outputStream default")
+                break;
+            }
         }
     }
 }

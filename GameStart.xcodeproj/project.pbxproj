@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1929AF9D550630E40D613ECB /* Pods_GameStart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47C923CE3BBD7C96DF317F82 /* Pods_GameStart.framework */; };
+		8C1269FF20EC61A10006D4F8 /* backProfile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C1269FE20EC61A10006D4F8 /* backProfile.jpg */; };
+		8C126A0420EC8DCA0006D4F8 /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C126A0020EC8DC90006D4F8 /* chat.png */; };
+		8C126A0520EC8DCA0006D4F8 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C126A0120EC8DCA0006D4F8 /* profile.png */; };
+		8C126A0620EC8DCA0006D4F8 /* call.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C126A0220EC8DCA0006D4F8 /* call.png */; };
+		8C126A0720EC8DCA0006D4F8 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C126A0320EC8DCA0006D4F8 /* edit.png */; };
+		8C126A0B20EC9D5E0006D4F8 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C126A0A20EC9D5E0006D4F8 /* Room.swift */; };
+		8C126A5520ED9FAA0006D4F8 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C126A5420ED9FAA0006D4F8 /* back.png */; };
+		8C126A5720EDA6A30006D4F8 /* back1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C126A5620EDA6A20006D4F8 /* back1.png */; };
 		8C2EC2FA20E1C1A2009AC07E /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2EC2F920E1C1A2009AC07E /* LogInViewController.swift */; };
 		8C39F65E20E0815F0009FDE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39F65D20E0815F0009FDE9 /* AppDelegate.swift */; };
 		8C39F66020E0815F0009FDE9 /* RoomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39F65F20E0815F0009FDE9 /* RoomListViewController.swift */; };
@@ -21,8 +30,34 @@
 		8C39F69920E0BA320009FDE9 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39F69820E0BA320009FDE9 /* MessageCell.swift */; };
 		8C39F69D20E0C9740009FDE9 /* refresh@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C39F69C20E0C9740009FDE9 /* refresh@3x.png */; };
 		8C39F69F20E151F50009FDE9 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39F69E20E151F50009FDE9 /* ChatViewController.swift */; };
+		8C4654EC20E9CA2100B773FB /* FriendFindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4654EB20E9CA2100B773FB /* FriendFindViewController.swift */; };
+		8C4654EE20EA0D4600B773FB /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C4654ED20EA0D4600B773FB /* search.png */; };
 		8C98FFE920E2210E0060F222 /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C98FFE720E2210E0060F222 /* lock.png */; };
 		8C98FFEA20E2210E0060F222 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C98FFE820E2210E0060F222 /* login.png */; };
+		8C9AA6F420F1FEBE00DB0902 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9AA6F320F1FEBE00DB0902 /* GameScene.swift */; };
+		8C9AA6F620F1FFD100DB0902 /* xBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C9AA6F520F1FFD100DB0902 /* xBtn.png */; };
+		8C9AA6F920F2013400DB0902 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8C9AA6F820F2013400DB0902 /* GameScene.sks */; };
+		8C9AA6FB20F2075400DB0902 /* house in Resources */ = {isa = PBXBuildFile; fileRef = 8C9AA6FA20F2075300DB0902 /* house */; };
+		8C9AA6FD20F21BEB00DB0902 /* BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C9AA6FC20F21BEB00DB0902 /* BG.png */; };
+		8CA100DB20EC54660051C139 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA100DA20EC54660051C139 /* ProfileViewController.swift */; };
+		8CC67BA320F252C800637CA1 /* TigerRun.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 8CC67BA020F252C700637CA1 /* TigerRun.atlas */; };
+		8CC67BA420F252C800637CA1 /* TigerAttack.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 8CC67BA120F252C700637CA1 /* TigerAttack.atlas */; };
+		8CC67BA520F252C800637CA1 /* TigerIdle.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 8CC67BA220F252C800637CA1 /* TigerIdle.atlas */; };
+		8CC67BAF20F252D500637CA1 /* HedgeAttack.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 8CC67BAC20F252D400637CA1 /* HedgeAttack.atlas */; };
+		8CC67BB020F252D500637CA1 /* HedgeIdle.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 8CC67BAD20F252D500637CA1 /* HedgeIdle.atlas */; };
+		8CC67BB120F252D500637CA1 /* HedgeRun.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 8CC67BAE20F252D500637CA1 /* HedgeRun.atlas */; };
+		8CC67BB520F252DA00637CA1 /* WolfAttack.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 8CC67BB220F252DA00637CA1 /* WolfAttack.atlas */; };
+		8CC67BB620F252DA00637CA1 /* WolfRun.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 8CC67BB320F252DA00637CA1 /* WolfRun.atlas */; };
+		8CC67BB720F252DA00637CA1 /* WolfIdle.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 8CC67BB420F252DA00637CA1 /* WolfIdle.atlas */; };
+		8CC67BBB20F2689400637CA1 /* BearIdle.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 8CC67BB820F2689300637CA1 /* BearIdle.atlas */; };
+		8CC67BBC20F2689400637CA1 /* BearAttack.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 8CC67BB920F2689300637CA1 /* BearAttack.atlas */; };
+		8CC67BBD20F2689400637CA1 /* BearRun.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 8CC67BBA20F2689400637CA1 /* BearRun.atlas */; };
+		8CC67BC120F3B32C00637CA1 /* Dead.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 8CC67BC020F3B32C00637CA1 /* Dead.atlas */; };
+		8CE0491D20E5C622008D6EC1 /* FriendListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE0491C20E5C622008D6EC1 /* FriendListTableViewController.swift */; };
+		8CEE680120F798AB0093C842 /* NormalScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8CEE680020F798AB0093C842 /* NormalScene.sks */; };
+		8CEE680520F799B90093C842 /* NormalScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEE680420F799B90093C842 /* NormalScene.swift */; };
+		BEB8B09B3EEA5556B53E9D14 /* Pods_GameStartTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F59E4410B3887FEC5F2A6B7 /* Pods_GameStartTests.framework */; };
+		F1B12556453F79C198311CED /* Pods_GameStartUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4656B2739E4480491369D79 /* Pods_GameStartUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +78,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		47C923CE3BBD7C96DF317F82 /* Pods_GameStart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameStart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C4CAB95A6EBD5173AC4078E /* Pods-GameStartTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameStartTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GameStartTests/Pods-GameStartTests.debug.xcconfig"; sourceTree = "<group>"; };
+		876AC7CC22E527110F3F6B70 /* Pods-GameStart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameStart.release.xcconfig"; path = "Pods/Target Support Files/Pods-GameStart/Pods-GameStart.release.xcconfig"; sourceTree = "<group>"; };
+		8C1269FE20EC61A10006D4F8 /* backProfile.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backProfile.jpg; sourceTree = "<group>"; };
+		8C126A0020EC8DC90006D4F8 /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat.png; sourceTree = "<group>"; };
+		8C126A0120EC8DCA0006D4F8 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		8C126A0220EC8DCA0006D4F8 /* call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = call.png; sourceTree = "<group>"; };
+		8C126A0320EC8DCA0006D4F8 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
+		8C126A0A20EC9D5E0006D4F8 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		8C126A5420ED9FAA0006D4F8 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		8C126A5620EDA6A20006D4F8 /* back1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back1.png; sourceTree = "<group>"; };
 		8C2EC2F920E1C1A2009AC07E /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "\U0010LogInViewController.swift"; sourceTree = "<group>"; };
 		8C39F65A20E0815F0009FDE9 /* GameStart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameStart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C39F65D20E0815F0009FDE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,8 +109,38 @@
 		8C39F69820E0BA320009FDE9 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		8C39F69C20E0C9740009FDE9 /* refresh@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@3x.png"; sourceTree = "<group>"; };
 		8C39F69E20E151F50009FDE9 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		8C4654EB20E9CA2100B773FB /* FriendFindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendFindViewController.swift; sourceTree = "<group>"; };
+		8C4654ED20EA0D4600B773FB /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
 		8C98FFE720E2210E0060F222 /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
 		8C98FFE820E2210E0060F222 /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
+		8C9AA6F320F1FEBE00DB0902 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		8C9AA6F520F1FFD100DB0902 /* xBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xBtn.png; sourceTree = "<group>"; };
+		8C9AA6F820F2013400DB0902 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		8C9AA6FA20F2075300DB0902 /* house */ = {isa = PBXFileReference; lastKnownFileType = folder; name = house; path = GameStart/Game/house; sourceTree = SOURCE_ROOT; };
+		8C9AA6FC20F21BEB00DB0902 /* BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BG.png; sourceTree = "<group>"; };
+		8CA100DA20EC54660051C139 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		8CC67BA020F252C700637CA1 /* TigerRun.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = TigerRun.atlas; sourceTree = "<group>"; };
+		8CC67BA120F252C700637CA1 /* TigerAttack.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = TigerAttack.atlas; sourceTree = "<group>"; };
+		8CC67BA220F252C800637CA1 /* TigerIdle.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = TigerIdle.atlas; sourceTree = "<group>"; };
+		8CC67BAC20F252D400637CA1 /* HedgeAttack.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = HedgeAttack.atlas; sourceTree = "<group>"; };
+		8CC67BAD20F252D500637CA1 /* HedgeIdle.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = HedgeIdle.atlas; sourceTree = "<group>"; };
+		8CC67BAE20F252D500637CA1 /* HedgeRun.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = HedgeRun.atlas; sourceTree = "<group>"; };
+		8CC67BB220F252DA00637CA1 /* WolfAttack.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = WolfAttack.atlas; sourceTree = "<group>"; };
+		8CC67BB320F252DA00637CA1 /* WolfRun.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = WolfRun.atlas; sourceTree = "<group>"; };
+		8CC67BB420F252DA00637CA1 /* WolfIdle.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = WolfIdle.atlas; sourceTree = "<group>"; };
+		8CC67BB820F2689300637CA1 /* BearIdle.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = BearIdle.atlas; sourceTree = "<group>"; };
+		8CC67BB920F2689300637CA1 /* BearAttack.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = BearAttack.atlas; sourceTree = "<group>"; };
+		8CC67BBA20F2689400637CA1 /* BearRun.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = BearRun.atlas; sourceTree = "<group>"; };
+		8CC67BC020F3B32C00637CA1 /* Dead.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Dead.atlas; sourceTree = "<group>"; };
+		8CE0491C20E5C622008D6EC1 /* FriendListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListTableViewController.swift; sourceTree = "<group>"; };
+		8CEE680020F798AB0093C842 /* NormalScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = NormalScene.sks; sourceTree = "<group>"; };
+		8CEE680420F799B90093C842 /* NormalScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalScene.swift; sourceTree = "<group>"; };
+		8F59E4410B3887FEC5F2A6B7 /* Pods_GameStartTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameStartTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDBA28469F29762EF64CB33E /* Pods-GameStartUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameStartUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GameStartUITests/Pods-GameStartUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E21CF2FA97F71807BD1EAEB9 /* Pods-GameStartTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameStartTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GameStartTests/Pods-GameStartTests.release.xcconfig"; sourceTree = "<group>"; };
+		E4656B2739E4480491369D79 /* Pods_GameStartUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameStartUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E61683EBD7FCAC57198837C7 /* Pods-GameStart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameStart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GameStart/Pods-GameStart.debug.xcconfig"; sourceTree = "<group>"; };
+		FDE0A305622377A82CD5F9DD /* Pods-GameStartUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameStartUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GameStartUITests/Pods-GameStartUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1929AF9D550630E40D613ECB /* Pods_GameStart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEB8B09B3EEA5556B53E9D14 /* Pods_GameStartTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,19 +164,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1B12556453F79C198311CED /* Pods_GameStartUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26AFF435D8B02A2AAA627E16 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E61683EBD7FCAC57198837C7 /* Pods-GameStart.debug.xcconfig */,
+				876AC7CC22E527110F3F6B70 /* Pods-GameStart.release.xcconfig */,
+				7C4CAB95A6EBD5173AC4078E /* Pods-GameStartTests.debug.xcconfig */,
+				E21CF2FA97F71807BD1EAEB9 /* Pods-GameStartTests.release.xcconfig */,
+				CDBA28469F29762EF64CB33E /* Pods-GameStartUITests.debug.xcconfig */,
+				FDE0A305622377A82CD5F9DD /* Pods-GameStartUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2EC851A90C0BEFCF1468A1BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				47C923CE3BBD7C96DF317F82 /* Pods_GameStart.framework */,
+				8F59E4410B3887FEC5F2A6B7 /* Pods_GameStartTests.framework */,
+				E4656B2739E4480491369D79 /* Pods_GameStartUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8C39F65120E0815F0009FDE9 = {
 			isa = PBXGroup;
 			children = (
 				8C39F65C20E0815F0009FDE9 /* GameStart */,
-				8C39F67420E081600009FDE9 /* GameStartTests */,
 				8C39F67F20E081600009FDE9 /* GameStartUITests */,
 				8C39F65B20E0815F0009FDE9 /* Products */,
+				8C39F67420E081600009FDE9 /* GameStartTests */,
+				26AFF435D8B02A2AAA627E16 /* Pods */,
+				2EC851A90C0BEFCF1468A1BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,14 +219,33 @@
 		8C39F65C20E0815F0009FDE9 /* GameStart */ = {
 			isa = PBXGroup;
 			children = (
+				8CC67BC020F3B32C00637CA1 /* Dead.atlas */,
+				8CC67BB920F2689300637CA1 /* BearAttack.atlas */,
+				8CC67BB820F2689300637CA1 /* BearIdle.atlas */,
+				8CC67BBA20F2689400637CA1 /* BearRun.atlas */,
+				8CC67BB220F252DA00637CA1 /* WolfAttack.atlas */,
+				8CC67BB420F252DA00637CA1 /* WolfIdle.atlas */,
+				8CC67BB320F252DA00637CA1 /* WolfRun.atlas */,
+				8CC67BAC20F252D400637CA1 /* HedgeAttack.atlas */,
+				8CC67BAD20F252D500637CA1 /* HedgeIdle.atlas */,
+				8CC67BAE20F252D500637CA1 /* HedgeRun.atlas */,
+				8CC67BA120F252C700637CA1 /* TigerAttack.atlas */,
+				8CC67BA220F252C800637CA1 /* TigerIdle.atlas */,
+				8CC67BA020F252C700637CA1 /* TigerRun.atlas */,
+				8C9AA6F720F2012400DB0902 /* GameScene */,
+				8C9AA6F020F1FD0F00DB0902 /* Game */,
 				8C872AB320E29B2B0079398A /* Resource */,
 				8C39F69B20E0BDA40009FDE9 /* Message */,
 				8C39F69A20E0BD920009FDE9 /* Storyboard */,
 				8C39F65D20E0815F0009FDE9 /* AppDelegate.swift */,
-				8C39F65F20E0815F0009FDE9 /* RoomListViewController.swift */,
+				8C126A0A20EC9D5E0006D4F8 /* Room.swift */,
+				8CE0491C20E5C622008D6EC1 /* FriendListTableViewController.swift */,
 				8C39F69020E0900D0009FDE9 /* Client.swift */,
 				8C39F69E20E151F50009FDE9 /* ChatViewController.swift */,
+				8C39F65F20E0815F0009FDE9 /* RoomListViewController.swift */,
+				8C4654EB20E9CA2100B773FB /* FriendFindViewController.swift */,
 				8C2EC2F920E1C1A2009AC07E /* LogInViewController.swift */,
+				8CA100DA20EC54660051C139 /* ProfileViewController.swift */,
 				8C39F66C20E081600009FDE9 /* Info.plist */,
 				8C39F66420E0815F0009FDE9 /* GameStart.xcdatamodeld */,
 				8C39F66720E081600009FDE9 /* Assets.xcassets */,
@@ -169,11 +292,40 @@
 		8C872AB320E29B2B0079398A /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				8C126A5620EDA6A20006D4F8 /* back1.png */,
+				8C126A5420ED9FAA0006D4F8 /* back.png */,
+				8C126A0220EC8DCA0006D4F8 /* call.png */,
+				8C126A0020EC8DC90006D4F8 /* chat.png */,
+				8C126A0320EC8DCA0006D4F8 /* edit.png */,
+				8C126A0120EC8DCA0006D4F8 /* profile.png */,
+				8C1269FE20EC61A10006D4F8 /* backProfile.jpg */,
+				8C4654ED20EA0D4600B773FB /* search.png */,
 				8C98FFE720E2210E0060F222 /* lock.png */,
 				8C98FFE820E2210E0060F222 /* login.png */,
 				8C39F69C20E0C9740009FDE9 /* refresh@3x.png */,
+				8C9AA6F520F1FFD100DB0902 /* xBtn.png */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		8C9AA6F020F1FD0F00DB0902 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				8C9AA6FC20F21BEB00DB0902 /* BG.png */,
+				8C9AA6FA20F2075300DB0902 /* house */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		8C9AA6F720F2012400DB0902 /* GameScene */ = {
+			isa = PBXGroup;
+			children = (
+				8C9AA6F820F2013400DB0902 /* GameScene.sks */,
+				8C9AA6F320F1FEBE00DB0902 /* GameScene.swift */,
+				8CEE680020F798AB0093C842 /* NormalScene.sks */,
+				8CEE680420F799B90093C842 /* NormalScene.swift */,
+			);
+			path = GameScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,9 +335,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8C39F68520E081600009FDE9 /* Build configuration list for PBXNativeTarget "GameStart" */;
 			buildPhases = (
+				BC95B350DC09B4FE1CF59750 /* [CP] Check Pods Manifest.lock */,
 				8C39F65620E0815F0009FDE9 /* Sources */,
 				8C39F65720E0815F0009FDE9 /* Frameworks */,
 				8C39F65820E0815F0009FDE9 /* Resources */,
+				C698551DD9B12D8434DCE3AA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -200,6 +354,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8C39F68820E081600009FDE9 /* Build configuration list for PBXNativeTarget "GameStartTests" */;
 			buildPhases = (
+				5B603765E05A518B755019DF /* [CP] Check Pods Manifest.lock */,
 				8C39F66D20E081600009FDE9 /* Sources */,
 				8C39F66E20E081600009FDE9 /* Frameworks */,
 				8C39F66F20E081600009FDE9 /* Resources */,
@@ -218,6 +373,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8C39F68B20E081600009FDE9 /* Build configuration list for PBXNativeTarget "GameStartUITests" */;
 			buildPhases = (
+				CB7EA3F891847CB1B285ACD6 /* [CP] Check Pods Manifest.lock */,
 				8C39F67820E081600009FDE9 /* Sources */,
 				8C39F67920E081600009FDE9 /* Frameworks */,
 				8C39F67A20E081600009FDE9 /* Resources */,
@@ -280,12 +436,38 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CC67BAF20F252D500637CA1 /* HedgeAttack.atlas in Resources */,
+				8CC67BBB20F2689400637CA1 /* BearIdle.atlas in Resources */,
 				8C39F66B20E081600009FDE9 /* LaunchScreen.storyboard in Resources */,
 				8C98FFEA20E2210E0060F222 /* login.png in Resources */,
+				8C126A0420EC8DCA0006D4F8 /* chat.png in Resources */,
+				8CEE680120F798AB0093C842 /* NormalScene.sks in Resources */,
+				8CC67BBC20F2689400637CA1 /* BearAttack.atlas in Resources */,
+				8C126A0520EC8DCA0006D4F8 /* profile.png in Resources */,
 				8C98FFE920E2210E0060F222 /* lock.png in Resources */,
+				8C126A0720EC8DCA0006D4F8 /* edit.png in Resources */,
+				8C9AA6F620F1FFD100DB0902 /* xBtn.png in Resources */,
+				8CC67BB020F252D500637CA1 /* HedgeIdle.atlas in Resources */,
+				8C4654EE20EA0D4600B773FB /* search.png in Resources */,
+				8CC67BC120F3B32C00637CA1 /* Dead.atlas in Resources */,
+				8C9AA6FB20F2075400DB0902 /* house in Resources */,
 				8C39F66820E081600009FDE9 /* Assets.xcassets in Resources */,
+				8CC67BA320F252C800637CA1 /* TigerRun.atlas in Resources */,
+				8C1269FF20EC61A10006D4F8 /* backProfile.jpg in Resources */,
 				8C39F66320E0815F0009FDE9 /* Main.storyboard in Resources */,
+				8C126A5520ED9FAA0006D4F8 /* back.png in Resources */,
+				8CC67BB520F252DA00637CA1 /* WolfAttack.atlas in Resources */,
+				8CC67BB620F252DA00637CA1 /* WolfRun.atlas in Resources */,
+				8CC67BB120F252D500637CA1 /* HedgeRun.atlas in Resources */,
+				8CC67BA520F252C800637CA1 /* TigerIdle.atlas in Resources */,
+				8C9AA6F920F2013400DB0902 /* GameScene.sks in Resources */,
+				8C9AA6FD20F21BEB00DB0902 /* BG.png in Resources */,
+				8CC67BB720F252DA00637CA1 /* WolfIdle.atlas in Resources */,
+				8CC67BBD20F2689400637CA1 /* BearRun.atlas in Resources */,
 				8C39F69D20E0C9740009FDE9 /* refresh@3x.png in Resources */,
+				8C126A5720EDA6A30006D4F8 /* back1.png in Resources */,
+				8C126A0620EC8DCA0006D4F8 /* call.png in Resources */,
+				8CC67BA420F252C800637CA1 /* TigerAttack.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +487,81 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5B603765E05A518B755019DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GameStartTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC95B350DC09B4FE1CF59750 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GameStart-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C698551DD9B12D8434DCE3AA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GameStart/Pods-GameStart-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GameStart/Pods-GameStart-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB7EA3F891847CB1B285ACD6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GameStartUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8C39F65620E0815F0009FDE9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -312,8 +569,14 @@
 			files = (
 				8C39F66020E0815F0009FDE9 /* RoomListViewController.swift in Sources */,
 				8C39F65E20E0815F0009FDE9 /* AppDelegate.swift in Sources */,
+				8C126A0B20EC9D5E0006D4F8 /* Room.swift in Sources */,
+				8CEE680520F799B90093C842 /* NormalScene.swift in Sources */,
 				8C39F69120E0900D0009FDE9 /* Client.swift in Sources */,
+				8CE0491D20E5C622008D6EC1 /* FriendListTableViewController.swift in Sources */,
 				8C39F69F20E151F50009FDE9 /* ChatViewController.swift in Sources */,
+				8C4654EC20E9CA2100B773FB /* FriendFindViewController.swift in Sources */,
+				8CA100DB20EC54660051C139 /* ProfileViewController.swift in Sources */,
+				8C9AA6F420F1FEBE00DB0902 /* GameScene.swift in Sources */,
 				8C39F69720E0B5830009FDE9 /* Message.swift in Sources */,
 				8C2EC2FA20E1C1A2009AC07E /* LogInViewController.swift in Sources */,
 				8C39F66620E0815F0009FDE9 /* GameStart.xcdatamodeld in Sources */,
@@ -488,6 +751,7 @@
 		};
 		8C39F68620E081600009FDE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E61683EBD7FCAC57198837C7 /* Pods-GameStart.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -506,6 +770,7 @@
 		};
 		8C39F68720E081600009FDE9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 876AC7CC22E527110F3F6B70 /* Pods-GameStart.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -524,6 +789,7 @@
 		};
 		8C39F68920E081600009FDE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C4CAB95A6EBD5173AC4078E /* Pods-GameStartTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -545,6 +811,7 @@
 		};
 		8C39F68A20E081600009FDE9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E21CF2FA97F71807BD1EAEB9 /* Pods-GameStartTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -566,6 +833,7 @@
 		};
 		8C39F68C20E081600009FDE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDBA28469F29762EF64CB33E /* Pods-GameStartUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -586,6 +854,7 @@
 		};
 		8C39F68D20E081600009FDE9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDE0A305622377A82CD5F9DD /* Pods-GameStartUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

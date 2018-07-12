@@ -12,11 +12,9 @@ import Foundation
 struct Message {
     let message: String
     let senderUsername: String
-    let messageSender: MessageSender
     
-    init(message: String, messageSender: MessageSender, username: String) {
-        self.message = ""
-        self.messageSender = messageSender
+    init(message: String, username: String) {
+        self.message = message
         self.senderUsername = username
     }
 }
