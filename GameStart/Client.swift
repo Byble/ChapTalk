@@ -23,7 +23,7 @@ class Client: NSObject {
     
     //let host: CFString = "127.0.0.1" as CFString
     
-    let host: CFString = "169.254.80.148" as CFString
+    let host: CFString = "127.0.0.1" as CFString
     let port: UInt32 = 34730
     let maxReadLength = 1024
     
