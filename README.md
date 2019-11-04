@@ -1,4 +1,5 @@
 # GameStart
-cepstone 2018
+Capstone 2018
 
-In Progress
+Impressed to be able to play games on the Line Video Call
+We added little game when chat together
